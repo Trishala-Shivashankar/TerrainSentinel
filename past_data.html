@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Data - TerrainSentinel</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Past Landslide Data</h1>
+        <p>Visualizing historical landslide events</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Current Risk</a></li>
+            <li><a href="past_data.html" class="active">Past Data</a></li>
+            <li><a href="products.html">Our Product</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Landslide Frequency Over Time</h2>
+            <canvas id="landslideChart" width="800" height="400"></canvas>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 TerrainSentinel | Critical Visual Tech</p>
+    </footer>
+
+    <script>
+        // This should eventually fetch and parse a real CSV file
+        // For now, use dummy data to simulate CSV parsing
+
+        const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"];
+        const dataPoints = [5, 9, 2, 6, 4, 8]; // replace with parsed CSV values
+
+        const ctx = document.getElementById('landslideChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Landslide Reports',
+                    data: dataPoints,
+                    fill: true,
+                    borderColor: '#f55e61',
+                    backgroundColor: 'rgba(245, 94, 97, 0.2)',
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    },
+                    title: {
+                        display: true,
+                        text: 'Monthly Landslide Events (Simulated)'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
