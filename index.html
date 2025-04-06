@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerrainSentinel - Landslide Early Warning</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>TerrainSentinel</h1>
+        <p>Your Smart Landslide Detection & Early Warning System</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Current Risk</a></li>
+            <li><a href="past_data.html">Past Data</a></li>
+            <li><a href="products.html">Our Product</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="risk-map">
+            <h2>India Risk Map (Simulated)</h2>
+            <div id="map">
+                <!-- Dynamic risk zones inserted by JS -->
+            </div>
+        </section>
+
+        <section id="alerts">
+            <h2>Risk Alerts</h2>
+            <ul id="alerts-list"></ul>
+        </section>
+
+        <section id="path-simulator">
+            <h2>Safe Path Simulator</h2>
+            <label for="start-zone">Start Zone:</label>
+            <select id="start-zone">
+                <option value="regionA">Region A</option>
+                <option value="regionB">Region B</option>
+                <option value="regionC">Region C</option>
+            </select>
+
+            <label for="end-zone">End Zone:</label>
+            <select id="end-zone">
+                <option value="regionA">Region A</option>
+                <option value="regionB">Region B</option>
+                <option value="regionC">Region C</option>
+            </select>
+
+            <button onclick="simulateSafePath()">Simulate</button>
+            <div id="safe-path-output"></div>
+        </section>
+
+        <section id="datetime">
+            <h2>Current Date and Time</h2>
+            <p id="current-datetime"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 TerrainSentinel | Critical Visual Tech</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
